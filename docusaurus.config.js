@@ -18,6 +18,32 @@ const config = {
     {
       tagName: "link",
       attributes: {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "/img/favicon-32.png",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "/img/favicon-16.png",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/img/favicon-256.png",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
         rel: "alternate icon",
         href: "/favicon.ico",
       },
