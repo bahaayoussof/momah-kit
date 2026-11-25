@@ -382,7 +382,7 @@ a:hover {
   background: transparent !important;
   background-color: transparent !important;
   border: 1px solid var(--mk-border);
-  border-radius: var(--momah-radius-pill);
+  border-radius: var(--momah-radius-sm);
   font-family: var(--momah-font-body);
   font-size: 0.82rem;
   color: var(--mk-text-secondary) !important;
@@ -443,7 +443,7 @@ a:hover {
   align-items: center;
   gap: 0.4rem;
   padding: 5px 12px;
-  border-radius: var(--momah-radius-pill);
+  border-radius: var(--momah-radius-sm);
   border: 1px solid var(--mk-border);
   background-color: transparent;
   color: var(--mk-text) !important;
@@ -490,7 +490,7 @@ a:hover {
   padding: 6px 12px;
   background-color: var(--mk-surface-elevated);
   border: 1px solid var(--mk-border);
-  border-radius: var(--momah-radius-pill);
+  border-radius: var(--momah-radius-sm);
 }
 
 .sidebar-search-icon {
@@ -596,7 +596,7 @@ a:hover {
   background-color: var(--mk-accent-soft) !important;
   color: var(--mk-text) !important;
   font-weight: 600 !important;
-  border-radius: var(--momah-radius-pill) !important;
+  border-radius: var(--momah-radius-sm) !important;
   border-left: none !important;
 }
 
@@ -607,7 +607,7 @@ a:hover {
   font-size: 0.65rem;
   font-weight: 600;
   padding: 1px 6px;
-  border-radius: var(--momah-radius-pill);
+  border-radius: var(--momah-radius-sm);
   background-color: var(--mk-btn-primary-bg);
   color: var(--mk-btn-primary-text);
   border: 1px solid var(--mk-border);
@@ -771,7 +771,7 @@ span[class*='codeLineNumber'] {
   margin-bottom: 1.25rem !important;
   padding: 4px !important;
   background-color: var(--mk-surface-elevated) !important;
-  border-radius: var(--momah-radius-pill) !important;
+  border-radius: var(--momah-radius-sm) !important;
   width: fit-content !important;
   border: 1px solid var(--mk-border) !important;
 }
@@ -782,7 +782,7 @@ span[class*='codeLineNumber'] {
   font-weight: 500 !important;
   color: var(--mk-text-secondary) !important;
   border: none !important;
-  border-radius: var(--momah-radius-pill) !important;
+  border-radius: var(--momah-radius-sm) !important;
   background: transparent !important;
   transition: all var(--momah-transition-fast) !important;
   cursor: pointer !important;

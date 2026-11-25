@@ -33,7 +33,7 @@
   padding: 4px 12px;
   background-color: var(--mk-accent-soft);
   border: 1px solid var(--mk-border);
-  border-radius: var(--momah-radius-pill);
+  border-radius: var(--momah-radius-sm);
   font-family: var(--momah-font-code);
   font-size: 0.78rem;
   font-weight: 600;
@@ -157,7 +157,7 @@
 
 .editorTabItem {
   padding: 5px 12px;
-  border-radius: var(--momah-radius-pill);
+  border-radius: var(--momah-radius-sm);
   font-size: 0.8rem;
   font-weight: 500;
   color: var(--mk-text-secondary);
@@ -396,7 +396,7 @@
   font-size: 0.72rem;
   font-weight: 600;
   padding: 2px 8px;
-  border-radius: var(--momah-radius-pill);
+  border-radius: var(--momah-radius-sm);
   background-color: var(--mk-accent-soft);
   color: var(--mk-text);
   border: 1px solid var(--mk-border);

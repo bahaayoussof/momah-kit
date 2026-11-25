@@ -34,7 +34,7 @@
 
 .pg-btn {
   padding: 4px 12px;
-  border-radius: var(--momah-radius-pill);
+  border-radius: var(--momah-radius-sm);
   border: 1px solid var(--momah-border);
   background-color: var(--momah-bg-elevated);
   color: var(--momah-text-secondary);

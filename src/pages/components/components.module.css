@@ -48,7 +48,7 @@
   font-size: 0.7rem;
   font-weight: 500;
   padding: 1px 7px;
-  border-radius: var(--momah-radius-pill);
+  border-radius: var(--momah-radius-sm);
   background-color: var(--mk-accent-soft);
   color: var(--mk-text);
   border: 1px solid var(--mk-border);
@@ -111,7 +111,7 @@
   padding: 10px 38px 10px 40px;
   background-color: var(--mk-surface);
   border: 1px solid var(--mk-border);
-  border-radius: var(--momah-radius-pill);
+  border-radius: var(--momah-radius-sm);
   font-family: var(--momah-font-body);
   font-size: 0.88rem;
   color: var(--mk-text);
@@ -274,7 +274,7 @@
   font-family: var(--momah-font-code);
   font-size: 0.7rem;
   padding: 1px 7px;
-  border-radius: var(--momah-radius-pill);
+  border-radius: var(--momah-radius-sm);
   background-color: var(--mk-surface-elevated);
   border: 1px solid var(--mk-divider);
   color: var(--mk-text-muted);
@@ -359,7 +359,7 @@
   font-size: 0.68rem;
   font-weight: 600;
   padding: 1px 7px;
-  border-radius: var(--momah-radius-pill);
+  border-radius: var(--momah-radius-sm);
   background-color: var(--mk-accent-soft);
   color: var(--mk-text);
   border: 1px solid var(--mk-border);
@@ -421,7 +421,7 @@
   align-items: center;
   gap: 0.4rem;
   padding: 8px 18px;
-  border-radius: var(--momah-radius-pill);
+  border-radius: var(--momah-radius-sm);
   background-color: var(--mk-btn-primary-bg);
   color: var(--mk-btn-primary-text) !important;
   border: 1px solid var(--mk-btn-primary-border);
@@ -592,7 +592,7 @@
   font-size: 0.66rem;
   font-weight: 600;
   padding: 1px 6px;
-  border-radius: var(--momah-radius-pill);
+  border-radius: var(--momah-radius-sm);
   background-color: var(--mk-accent-soft);
   color: var(--mk-text);
   border: 1px solid var(--mk-border);
@@ -704,7 +704,7 @@
 .emptyActionBtn {
   background-color: var(--mk-surface-elevated);
   border: 1px solid var(--mk-border);
-  border-radius: var(--momah-radius-pill);
+  border-radius: var(--momah-radius-sm);
   padding: 6px 16px;
   color: var(--mk-text);
   font-size: 0.82rem;
