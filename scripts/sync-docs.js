@@ -8,8 +8,32 @@ const candidateDirs = [
   path.join(__dirname, "../designes/component/components"),
   path.join(docSiteDir, "../designes/component/components"),
 ];
-const componentsDir = candidateDirs.find((d) => fs.existsSync(d)) || candidateDirs[0];
+const componentsDir = candidateDirs.find((d) => fs.existsSync(d));
 const targetDocsDir = path.join(docSiteDir, "docs/components");
+
+if (!componentsDir) {
+  console.log(
+    "⚠️ Source components folder not found (running in CI/Vercel or standalone repo).",
+  );
+  console.log(
+    "Skipping docs sync and using committed docs in docs/components/.",
+  );
+
+  const playgroundFile = path.join(
+    docSiteDir,
+    "src/components/Playground/generated.js",
+  );
+  if (!fs.existsSync(playgroundFile)) {
+    fs.mkdirSync(path.dirname(playgroundFile), { recursive: true });
+    fs.writeFileSync(
+      playgroundFile,
+      `export const generatedComponents = {};`,
+      "utf8",
+    );
+  }
+
+  process.exit(0);
+}
 
 // Helper to escape characters that crash the MDX parser outside of code blocks
 function escapeMdxText(text) {
