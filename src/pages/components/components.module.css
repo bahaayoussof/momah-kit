@@ -1,0 +1,808 @@
+/* ==========================================================================
+   COMPONENT ATELIER — EDITORIAL COMPONENT DISCOVERY EXPERIENCE
+   ========================================================================== */
+
+.atelierContainer {
+  background-color: var(--mk-bg);
+  min-height: calc(100vh - 58px);
+  padding: 3.5rem 2rem 6rem 2rem;
+  transition: background-color var(--momah-transition-base);
+  overflow-x: clip;
+}
+
+.atelierInner {
+  max-width: 1380px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   A. EDITORIAL HEADER & SEARCH COMPOSITION
+   ========================================================================== */
+
+.introHeader {
+  margin-bottom: 3.5rem;
+  border-bottom: 1px solid var(--mk-border);
+  padding-bottom: 2.5rem;
+}
+
+.headerBadgeRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.registryEyebrow {
+  font-family: var(--momah-font-code);
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--mk-accent);
+}
+
+.versionPill {
+  font-family: var(--momah-font-code);
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 1px 7px;
+  border-radius: var(--momah-radius-pill);
+  background-color: var(--mk-accent-soft);
+  color: var(--mk-text);
+  border: 1px solid var(--mk-border);
+}
+
+.introMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2.5rem;
+  margin-bottom: 2.25rem;
+}
+
+.introText {
+  flex: 1;
+  max-width: 680px;
+}
+
+.pageTitle {
+  font-size: 2.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--mk-text);
+  line-height: 1.15;
+  margin: 0 0 0.85rem 0;
+}
+
+.pageDescription {
+  font-size: 1.05rem;
+  color: var(--mk-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Integrated Search Box */
+.searchBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  min-width: 340px;
+}
+
+.searchInputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.searchIconSvg {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--mk-text-muted);
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px 38px 10px 40px;
+  background-color: var(--mk-surface);
+  border: 1px solid var(--mk-border);
+  border-radius: var(--momah-radius-pill);
+  font-family: var(--momah-font-body);
+  font-size: 0.88rem;
+  color: var(--mk-text);
+  outline: none;
+  box-shadow: var(--momah-shadow-subtle);
+  transition: all var(--momah-transition-fast);
+}
+
+.searchInput:focus {
+  border-color: var(--mk-accent);
+  box-shadow: 0 0 0 3px var(--mk-accent-soft);
+}
+
+.clearBtn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--mk-text-muted);
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: var(--momah-radius-xs);
+}
+
+.clearBtn:hover {
+  color: var(--mk-text);
+}
+
+.searchMeta {
+  font-family: var(--momah-font-code);
+  font-size: 0.76rem;
+  color: var(--mk-text-secondary);
+}
+
+.searchMeta strong {
+  color: var(--mk-text);
+}
+
+/* Metrics Strip */
+.metricsStrip {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background-color: var(--mk-surface);
+  border: 1px solid var(--mk-border);
+  border-radius: var(--momah-radius-md);
+  padding: 1rem 1.75rem;
+  box-shadow: var(--momah-shadow-subtle);
+}
+
+.metricItem {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.metricNumber {
+  font-family: var(--momah-font-code);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--mk-text);
+  letter-spacing: -0.02em;
+}
+
+.metricLabel {
+  font-size: 0.84rem;
+  color: var(--mk-text-secondary);
+  font-weight: 500;
+}
+
+.metricDivider {
+  width: 1px;
+  height: 20px;
+  background-color: var(--mk-divider);
+}
+
+/* ==========================================================================
+   B. ATELIER LAYOUT (CATEGORY RAIL + GALLERY STAGE)
+   ========================================================================== */
+
+.atelierLayout {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+/* Vertical Category Rail */
+.categoryRail {
+  width: 230px;
+  position: sticky;
+  top: 80px;
+  flex-shrink: 0;
+}
+
+.railHeader {
+  margin-bottom: 0.75rem;
+  padding: 0 0.5rem;
+}
+
+.railTitle {
+  font-family: var(--momah-font-code);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--mk-text-muted);
+  text-transform: uppercase;
+}
+
+.railNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.railItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.55rem 0.85rem;
+  border-radius: var(--momah-radius-sm);
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--mk-text-secondary);
+  font-family: var(--momah-font-body);
+  font-size: 0.86rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--momah-transition-fast);
+}
+
+.railItem:hover {
+  color: var(--mk-text);
+  background-color: var(--mk-surface-elevated);
+}
+
+.railItemActive {
+  color: var(--mk-text) !important;
+  background-color: var(--mk-surface) !important;
+  border-color: var(--mk-border) !important;
+  font-weight: 600;
+  box-shadow: var(--momah-shadow-subtle);
+}
+
+.railItemActive .railItemBadge {
+  background-color: var(--mk-accent-soft);
+  color: var(--mk-text);
+  border-color: var(--mk-border);
+}
+
+.railItemLabel {
+  flex: 1;
+}
+
+.railItemBadge {
+  font-family: var(--momah-font-code);
+  font-size: 0.7rem;
+  padding: 1px 7px;
+  border-radius: var(--momah-radius-pill);
+  background-color: var(--mk-surface-elevated);
+  border: 1px solid var(--mk-divider);
+  color: var(--mk-text-muted);
+}
+
+.resetFiltersBox {
+  margin-top: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+.resetFiltersBtn {
+  background: none;
+  border: none;
+  font-size: 0.78rem;
+  color: var(--mk-accent);
+  cursor: pointer;
+  padding: 0;
+  font-weight: 500;
+}
+
+.resetFiltersBtn:hover {
+  text-decoration: underline;
+}
+
+/* Gallery Stage */
+.galleryStage {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ==========================================================================
+   C. FEATURED COMPONENT CENTERPIECE
+   ========================================================================== */
+
+.featuredSection {
+  margin-bottom: 3rem;
+}
+
+.featuredCard {
+  background-color: var(--mk-surface);
+  border: 1px solid var(--mk-border);
+  border-radius: var(--momah-radius-lg);
+  box-shadow: var(--momah-shadow-card);
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 2rem;
+  padding: 2.25rem;
+  overflow: hidden;
+  transition: border-color var(--momah-transition-base);
+}
+
+.featuredContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.featuredMetaRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.featuredEyebrow {
+  font-family: var(--momah-font-code);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--mk-accent);
+  text-transform: uppercase;
+}
+
+.featuredCategoryBadge {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--mk-text-muted);
+}
+
+.featuredStatusBadge {
+  font-family: var(--momah-font-code);
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 1px 7px;
+  border-radius: var(--momah-radius-pill);
+  background-color: var(--mk-accent-soft);
+  color: var(--mk-text);
+  border: 1px solid var(--mk-border);
+}
+
+.featuredTitle {
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--mk-text);
+  margin: 0 0 0.75rem 0;
+}
+
+.featuredDesc {
+  font-size: 0.95rem;
+  color: var(--mk-text-secondary);
+  line-height: 1.6;
+  margin: 0 0 1.25rem 0;
+}
+
+.featuredHighlights {
+  margin: 0 0 1.5rem 0;
+  padding-left: 1.25rem;
+  color: var(--mk-text-secondary);
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+
+.featuredHighlights li {
+  margin-bottom: 0.35rem;
+}
+
+.featuredCodeSnippet {
+  background-color: var(--mk-code-bg);
+  border: 1px solid var(--mk-code-border);
+  border-radius: var(--momah-radius-sm);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+}
+
+.featuredCodeSnippet code {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  font-family: var(--momah-font-code);
+  font-size: 0.8rem;
+  color: var(--mk-code-text);
+  white-space: nowrap;
+}
+
+.featuredActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.featuredPrimaryCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 8px 18px;
+  border-radius: var(--momah-radius-pill);
+  background-color: var(--mk-btn-primary-bg);
+  color: var(--mk-btn-primary-text) !important;
+  border: 1px solid var(--mk-btn-primary-border);
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: all var(--momah-transition-fast);
+}
+
+.featuredPrimaryCta:hover {
+  background-color: var(--mk-btn-primary-hover);
+  transform: translateY(-1px);
+}
+
+.featuredPreviewWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.previewFrame {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--mk-border);
+  border-radius: var(--momah-radius-md);
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+}
+
+.featuredPreviewImg {
+  max-width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ==========================================================================
+   D. COMPONENT DISCOVERY GALLERY
+   ========================================================================== */
+
+.gallerySection {
+  min-width: 0;
+}
+
+.gallerySectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--mk-border);
+}
+
+.sectionHeading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--mk-text);
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.sectionCount {
+  font-family: var(--momah-font-code);
+  font-size: 0.78rem;
+  color: var(--mk-text-muted);
+}
+
+/* Editorial Grid with Varied Hierarchy */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-flow: dense;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.atelierCard {
+  background-color: var(--mk-surface);
+  border: 1px solid var(--mk-border);
+  border-radius: var(--momah-radius-lg);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none !important;
+  color: inherit !important;
+  box-shadow: var(--momah-shadow-subtle);
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  transition: transform var(--momah-transition-fast), border-color var(--momah-transition-fast), box-shadow var(--momah-transition-fast);
+}
+
+.atelierCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--mk-accent);
+  box-shadow: var(--momah-shadow-card);
+}
+
+/* 2-Column Wide Card */
+.cardSpanWide {
+  grid-column: span 2;
+}
+
+/* Card Preview Container */
+.cardPreviewContainer {
+  margin-bottom: 1.15rem;
+}
+
+.previewFrameSmall {
+  background-color: #FFFFFF;
+  border: 1px solid var(--mk-border);
+  border-radius: var(--momah-radius-sm);
+  padding: 0.85rem;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cardSpanWide .previewFrameSmall {
+  height: 160px;
+}
+
+.cardPreviewImg {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Card Body */
+.cardBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.cardName {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: var(--mk-text);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.cardBadgeGroup {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.cardStatusBadge {
+  font-family: var(--momah-font-code);
+  font-size: 0.66rem;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: var(--momah-radius-pill);
+  background-color: var(--mk-accent-soft);
+  color: var(--mk-text);
+  border: 1px solid var(--mk-border);
+}
+
+.cardDesc {
+  font-size: 0.85rem;
+  color: var(--mk-text-secondary);
+  line-height: 1.5;
+  margin: 0 0 0.85rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Invocation mini box */
+.cardInvocation {
+  background-color: var(--mk-code-bg);
+  border: 1px solid var(--mk-code-border);
+  border-radius: var(--momah-radius-xs);
+  padding: 0.45rem 0.65rem;
+  margin-bottom: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardInvocation code {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  font-family: var(--momah-font-code);
+  font-size: 0.74rem;
+  color: var(--mk-code-text);
+}
+
+/* Variants */
+.cardVariants {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.variantTag {
+  font-family: var(--momah-font-code);
+  font-size: 0.68rem;
+  padding: 1px 6px;
+  border-radius: var(--momah-radius-xs);
+  background-color: var(--mk-surface-elevated);
+  border: 1px solid var(--mk-border);
+  color: var(--mk-text-secondary);
+}
+
+/* Footer */
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--mk-divider);
+  padding-top: 0.65rem;
+  font-size: 0.78rem;
+}
+
+.cardCategory {
+  color: var(--mk-text-muted);
+  font-weight: 500;
+}
+
+.cardActionLink {
+  color: var(--mk-accent);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   E. EMPTY STATE
+   ========================================================================== */
+
+.emptyStateContainer {
+  text-align: center;
+  padding: 4.5rem 1.5rem;
+  background-color: var(--mk-surface);
+  border: 1px solid var(--mk-border);
+  border-radius: var(--momah-radius-lg);
+}
+
+.emptyStateIcon {
+  font-size: 2.2rem;
+  color: var(--mk-text-muted);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.emptyTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--mk-text);
+  margin: 0 0 0.5rem 0;
+}
+
+.emptyDesc {
+  color: var(--mk-text-secondary);
+  font-size: 0.9rem;
+  max-width: 420px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.emptyActionBtn {
+  background-color: var(--mk-surface-elevated);
+  border: 1px solid var(--mk-border);
+  border-radius: var(--momah-radius-pill);
+  padding: 6px 16px;
+  color: var(--mk-text);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--momah-transition-fast);
+}
+
+.emptyActionBtn:hover {
+  background-color: var(--mk-btn-primary-bg);
+  color: var(--mk-btn-primary-text);
+  border-color: var(--mk-btn-primary-border);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+  .atelierLayout {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .categoryRail {
+    width: 100%;
+    position: static;
+  }
+
+  .railNav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .railItem {
+    padding: 0.4rem 0.85rem;
+    gap: 0.5rem;
+  }
+
+  .featuredCard {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cardSpanWide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .introMain {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+
+  .searchBox {
+    min-width: 100%;
+    align-items: stretch;
+  }
+
+  .metricsStrip {
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+  }
+
+  .metricDivider {
+    display: none;
+  }
+
+  .cardsGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cardSpanWide {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .atelierContainer {
+    padding: 2rem 1rem 4rem 1rem;
+  }
+
+  .pageTitle {
+    font-size: 2rem;
+  }
+
+  .featuredCard {
+    padding: 1.25rem;
+  }
+
+  .featuredTitle {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,45 @@
+.tabList {
+  margin-bottom: 1.5rem;
+}
+
+.tabItem {
+  margin-top: 0 !important;
+  font-family: var(--momah-font-body) !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+  border-radius: var(--momah-radius-pill) !important;
+  padding: 6px 16px !important;
+  transition: all var(--momah-transition-fast) !important;
+  cursor: pointer !important;
+}
+
+:global(.tabs) {
+  display: inline-flex !important;
+  gap: 0.35rem !important;
+  padding: 4px !important;
+  background-color: var(--momah-bg-elevated) !important;
+  border: 1px solid var(--momah-border) !important;
+  border-radius: var(--momah-radius-pill) !important;
+  border-bottom: 1px solid var(--momah-border) !important;
+  margin-bottom: 1.5rem !important;
+  list-style: none !important;
+}
+
+:global(.tabs__item) {
+  color: var(--momah-text-secondary) !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+:global(.tabs__item:hover) {
+  color: var(--momah-text-primary) !important;
+}
+
+:global(.tabs__item--active) {
+  background-color: var(--momah-bg-surface) !important;
+  color: var(--momah-text-primary) !important;
+  font-weight: 600 !important;
+  box-shadow: 0 1px 3px rgba(32, 37, 31, 0.08) !important;
+  border: none !important;
+}

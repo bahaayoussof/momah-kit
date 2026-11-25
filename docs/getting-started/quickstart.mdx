@@ -1,0 +1,97 @@
+---
+sidebar_position: 3
+title: Quickstart
+---
+
+# Quickstart Guide
+
+This guide demonstrates how to render and configure your first Momah Kit components in ASP.NET Core Razor views.
+
+---
+
+## Rendering a Component
+
+Every component is invoked via `@await Html.PartialAsync(...)` or the `<partial>` tag helper. 
+
+### Basic Example: Status Badge
+
+Render a semantic status badge with custom colors and a status dot:
+
+```cshtml
+@* Views/Orders/Details.cshtml *@
+
+<div class="d-flex align-items-center gap-3">
+    <h3>Order #48291</h3>
+    @await Html.PartialAsync("UI/_Badge", new {
+        label = "Processing",
+        bgColor = "#E9EBDD",
+        labelColor = "#263B2B",
+        dot = true,
+        radius = 6
+    })
+</div>
+```
+
+---
+
+## Dynamic Forms Example
+
+Here is a typical enterprise form containing an input field, select dropdown, and a dual date calendar:
+
+```cshtml
+<form method="post" asp-action="CreateLegalCase">
+    <div class="row g-3">
+        <!-- Text Input -->
+        <div class="col-md-6">
+            @await Html.PartialAsync("UI/_InputField", new {
+                id = "CaseTitle",
+                label = "Case Title",
+                placeholder = "Enter formal case title",
+                required = true
+            })
+        </div>
+
+        <!-- Custom Select Input -->
+        <div class="col-md-6">
+            @await Html.PartialAsync("UI/_MomahSelect", new {
+                id = "CourtDistrict",
+                label = "Court District",
+                required = true
+            })
+        </div>
+
+        <!-- Dual Calendar (Hijri & Gregorian) -->
+        <div class="col-12">
+            @await Html.PartialAsync("UI/_DualDate", new {
+                id = "FilingDate",
+                label = "Filing Date (Hijri / Gregorian)",
+                required = true
+            })
+        </div>
+
+        <div class="col-12 mt-4">
+            <button type="submit" class="btn btn-primary px-4 py-2">
+                Submit Filing
+            </button>
+        </div>
+    </div>
+</form>
+```
+
+---
+
+## Unique IDs Requirement
+
+> **Important:** When rendering multiple instances of the same interactive component (such as `_DateInput`, `_MomahSelect`, or `_DualDate`) on the same page, always assign a distinct `id` to each instance. Client-side initialization relies on this unique identifier to bind DOM events.
+
+```cshtml
+@* Correct: Distinct IDs for start and end date pickers *@
+@await Html.PartialAsync("UI/_DateInput", new { id = "StartDate", label = "Effective Start" })
+@await Html.PartialAsync("UI/_DateInput", new { id = "EndDate", label = "Effective End" })
+```
+
+---
+
+## Next Steps
+
+Explore the full range of components in the [Component Explorer](/components) or check individual component documentation from the sidebar.

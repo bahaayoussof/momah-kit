@@ -1,0 +1,91 @@
+---
+sidebar_position: 2
+title: Installation
+---
+
+# Installation & Setup
+
+Integrating Momah Kit into an ASP.NET Core MVC project requires three straightforward steps: placing the partial views in your project tree, referencing shared host dependencies, and configuring ViewImports.
+
+---
+
+## 1. Directory Structure
+
+Copy the component partial views into your application's shared views directory:
+
+```text
+YourApp.Web/
+├── Views/
+│   └── Shared/
+│       └── UI/
+│           ├── _Badge.cshtml
+│           ├── _InputField.cshtml
+│           ├── _MomahSelect.cshtml
+│           ├── _DateInput.cshtml
+│           └── ... (other partial views)
+└── wwwroot/
+    ├── css/
+    │   └── momah-table.css
+    └── js/
+        └── momah-table.js
+```
+
+> **Tip:** You may also place component partials under `Views/Shared/` directly if your project conventions prefer not using a `UI/` subdirectory. Adjust the path argument in `@await Html.PartialAsync("UI/_ComponentName")` accordingly.
+
+---
+
+## 2. Host Dependencies
+
+Most Momah Kit components are styled using semantic CSS classes compatible with Bootstrap 5. Several specialized components depend on specific client-side libraries:
+
+| Dependency | Required By | Delivery Method |
+| :--- | :--- | :--- |
+| **jQuery 3.6+** | `MomahSelect`, `DateInput`, `DateRange`, `DualDate` | Include in `_Layout.cshtml` `<head>` or before `</body>` |
+| **Bootstrap 5 JS** | `PromptModal`, `momah-table` column dropdown | Standard Bootstrap bundle |
+| **Bootstrap Icons** | `AutoComplete`, `Banner` (when icon classes are provided) | Include `bootstrap-icons.css` |
+| **jquery.calendars** | `DateRange`, `DualDate` (Umm al-Qura calendar engine) | Include plugin scripts |
+| **CKEditor 5** | `CkEditor` | Provide classic build bundle at host path |
+
+### Layout Integration Example
+
+Add the core script dependencies to your root `_Layout.cshtml`:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Enterprise Portal</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap-icons/font/bootstrap-icons.css" />
+</head>
+<body>
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+
+    <!-- Essential Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+```
+
+---
+
+## 3. Configure Razor ViewImports
+
+To enable seamless rendering across all views, ensure your `Views/_ViewImports.cshtml` includes the required tag helpers and namespaces:
+
+```cshtml
+@using YourApp.Web
+@using YourApp.Web.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+```
+
+You are now ready to render your first component. Proceed to the [Quickstart Guide](/docs/getting-started/quickstart).

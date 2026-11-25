@@ -1,0 +1,75 @@
+---
+sidebar_position: 1
+slug: /intro
+title: Overview
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Momah Kit Overview
+
+Momah Kit is an enterprise ASP.NET Core MVC UI component library designed for high-performance server-rendered applications. Every component is provided as a clean Razor partial view (`_Name.cshtml`) with encapsulated styles and scripts, allowing teams to adopt components incrementally without external npm build pipelines or complex front-end runtimes.
+
+---
+
+## Architectural Principles
+
+### Native Razor Integration
+Every component renders directly within the ASP.NET Core Razor pipeline using standard `@await Html.PartialAsync(...)` invocation or the `<partial>` tag helper. This ensures zero client-side hydration delays, seamless server-side rendering, and native compatibility with ASP.NET model validation.
+
+### Encapsulated Asset Architecture
+Component styles and client scripts are packaged directly inside their respective partial views or served as dedicated static assets (such as `momah-table.js` and `momah-table.css`). Assets are registered once per request through `ViewData` or `ViewContext` deduplication guards, preventing duplicate script execution across multiple instances.
+
+### Multi-Model Binding Support
+Components support both strongly typed anonymous objects and positional pattern-matched tuples:
+
+```cshtml
+@* Invocation via Anonymous Object *@
+@await Html.PartialAsync("UI/_Badge", new {
+    label = "Active Order",
+    bgColor = "#E9EBDD",
+    labelColor = "#263B2B",
+    dot = true,
+    radius = 6
+})
+
+@* Invocation via Concise Positional Tuple *@
+@await Html.PartialAsync("UI/_Badge", ("#263B2B", "#E9EBDD", "Active Order"))
+```
+
+---
+
+## Component Distribution
+
+The library is organized into four core functional domains:
+
+### Form Controls
+High-integrity input primitives engineered for mission-critical data entry:
+- **DualDate**: Dual Hijri/Gregorian picker maintaining synchronized calendar submissions.
+- **DateInput & DateRange**: Single and range calendar controls supporting Umm al-Qura and Gregorian calendars.
+- **InputField & TextArea**: Structured form inputs with required validation markers and floating labels.
+- **AutoComplete & MomahSelect**: Search-driven single and multi-select dropdowns with remote AJAX search and tag dismissals.
+- **FileUpload & AttachBox**: File upload dropzones and preview cards with client-side file inspection.
+- **CkEditor**: Rich-text editing wrapper with preconfigured enterprise toolbars.
+
+### Data Display
+High-density visualization and status primitives:
+- **MomahTable Grid**: Modular JavaScript table renderer with dynamic column selection, multi-field filtering, and client-side pagination.
+- **Badge**: Semantic status tags with color variants, border controls, and status indicators.
+- **AttachmentCard**: Document preview and metadata card for enterprise file archives.
+
+### Overlays & Feedback
+Non-disruptive feedback and contextual assistance:
+- **PromptModal**: Server- and client-triggered modal dialog for operational feedback, confirmations, and audit reasoning.
+- **Banner & Notification**: Dismissible and persistent informational alerts.
+- **Tooltip & LabelTip**: Contextual micro-tooltips and truncated label hints.
+
+### Navigation
+- **Breadcrumb**: Structured hierarchy indicators complying with enterprise navigation standards.
+
+---
+
+## Next Steps
+
+To begin integrating Momah Kit into your ASP.NET Core solution, continue to the [Installation Guide](/docs/getting-started/installation) or browse the interactive [Component Explorer](/components).

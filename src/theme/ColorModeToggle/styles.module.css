@@ -1,0 +1,132 @@
+.toggleContainer {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.toggleButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  margin: 0;
+  border-radius: 9px;
+  cursor: pointer;
+  border: 1px solid var(--mk-border, #D8E4E0);
+  background-color: var(--mk-surface-elevated, #F5F8F7);
+  color: var(--mk-text, #20312F);
+  transition: background-color 150ms ease, border-color 150ms ease, transform 120ms ease, box-shadow 150ms ease;
+  user-select: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Light Mode Hover / Active */
+:global([data-theme='light']) .toggleButton {
+  background-color: #FFFFFF;
+  border-color: #D8E4E0;
+}
+
+:global([data-theme='light']) .toggleButton:hover {
+  background-color: #F5F8F7;
+  border-color: #39817A;
+  box-shadow: 0 2px 6px rgba(23, 76, 75, 0.08);
+  transform: translateY(-1px);
+}
+
+:global([data-theme='light']) .toggleButton:active {
+  transform: translateY(0) scale(0.95);
+  background-color: #E7EFEC;
+}
+
+/* Dark Mode (Midnight Slate) Hover / Active */
+:global([data-theme='dark']) .toggleButton {
+  background-color: #292E38;
+  border-color: #353B46;
+  color: #DDE1E8;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+:global([data-theme='dark']) .toggleButton:hover {
+  background-color: #303B4C;
+  border-color: #8296B5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  transform: translateY(-1px);
+}
+
+:global([data-theme='dark']) .toggleButton:active {
+  transform: translateY(0) scale(0.95);
+  background-color: #20242D;
+}
+
+/* Focus Outline */
+.toggleButton:focus-visible {
+  outline: 2px solid var(--mk-focus, #39817A);
+  outline-offset: 2px;
+}
+
+.toggleButtonDisabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.toggleButtonTransitioning {
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Icon Container & Motion Track */
+.iconTrack {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.iconItem {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 160ms ease,
+              color 150ms ease;
+  will-change: transform, opacity;
+}
+
+/* ==============================================================
+   CSS-DRIVEN INSTANT THEME BINDING (0ms lag, zero hydration flicker)
+   ============================================================== */
+
+/* Light Mode: Sun is active, warm golden amber */
+:global([data-theme='light']) .sunIcon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+  color: #C49A5A; /* Approved Highlight token */
+}
+
+:global([data-theme='light']) .moonIcon {
+  opacity: 0;
+  transform: rotate(70deg) scale(0.35);
+  pointer-events: none;
+}
+
+/* Dark Mode: Moon is active, celestial slate */
+:global([data-theme='dark']) .sunIcon {
+  opacity: 0;
+  transform: rotate(-70deg) scale(0.35);
+  pointer-events: none;
+}
+
+:global([data-theme='dark']) .moonIcon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+  color: #A9B8D0; /* Approved Dark Accent token */
+}
